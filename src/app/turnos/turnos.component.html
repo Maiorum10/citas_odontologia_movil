@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
+        <div class="filter"></div>
+            <div class="content-center">
+                <div class="container">
+                    <div>
+                        <h2 class="presentation-subtitle">Consulta de Citas</h2>
+                        <br>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="table-responsive" style="height: 400px; overflow: auto;">
+                <table class="table" id="consultas" style="color:#ffffff">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col"colspan="2">Odontólogo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let turno of turnos">
+                        <td>{{turno.fecha}}</td>
+                        <td>{{turno.hora}}</td>
+                        <td>{{turno.nombre}}</td>
+                        <td>{{turno.apellido}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

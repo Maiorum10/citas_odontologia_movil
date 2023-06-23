@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/daniel-olahh.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register" id="registro">
+                        <h3 class="titles">Actualizar datos</h3>
+                        <form class="register-form">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control" disabled maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" [(ngModel)]="cedula" name="cedula" placeholder="Cedula">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" [(ngModel)]="p_nombre" name="p_nombre" placeholder="Nombre" onkeydown="return /[áéíóúÁÉÍÓÚa-zA-Zñ]/i.test(event.key)">
+                            <label>Apellido</label>
+                            <input type="text" class="form-control" [(ngModel)]="p_apellido" name="p_apellido" placeholder="Apellido" onkeydown="return /[áéíóúÁÉÍÓÚa-zA-Zñ]/i.test(event.key)">
+                            <label>Celular</label>
+                            <input type="text" class="form-control" [(ngModel)]="celular" name="celular" placeholder="Celular" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control" [(ngModel)]="clave" name="clave" placeholder="Contraseña">
+                            <button class="btn btn-primary btn-block btn-round" (click)="editar()">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
+        <div class="filter"></div>
+            <div class="content-center">
+                <div class="container">
+                    <div>
+                        <h2 class="presentation-subtitle">Seleccione Fecha</h2>
+                        <br>
+                        <div class="row">   
+                            <br>
+                            <div class="cent"><input (keyup)="calendar()" class="in" [(ngModel)]="nuevo" placeholder="{{nuevo}}" type="date" id="inputdate" name="inputdate" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></div>
+                            <br>
+                            <div ngbDropdown class="d-inline-block dropdown">
+                                <a class="nav-link" id="dropdownBasic1" style="color:#ffffff" ngbDropdownToggle>{{medico}}</a>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                                    <a class="dropdown-item" style="color:#ffffff" *ngFor="let doctor of doctores" (click)="removeIdD(doctor)">{{doctor.nombre}} {{doctor.apellido}}</a>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-info btn-round" (click)="fecha()">Consultar</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="table-responsive" style="height: 400px; overflow: auto;">
+                <table class="table" id="consultas" style="color:#ffffff" >
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{n1}}</th>
+                        <td>{{h1}}</td>
+                        <td>{{e1}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c1" [disabled]="c1" (click)="agendar1()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n2}}</th>
+                        <td>{{h2}}</td>
+                        <td>{{e2}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c2" [disabled]="c2" (click)="agendar2()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n3}}</th>
+                        <td>{{h3}}</td>
+                        <td>{{e3}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c3" [disabled]="c3" (click)="agendar3()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n4}}</th>
+                        <td>{{h4}}</td>
+                        <td>{{e4}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c4" [disabled]="c4" (click)="agendar4()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n5}}</th>
+                        <td>{{h5}}</td>
+                        <td>{{e5}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c5" [disabled]="c5" (click)="agendar5()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n6}}</th>
+                        <td>{{h6}}</td>
+                        <td>{{e6}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c6" [disabled]="c6" (click)="agendar6()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n7}}</th>
+                        <td>{{h7}}</td>
+                        <td>{{e7}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c7" [disabled]="c7" (click)="agendar7()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n8}}</th>
+                        <td>{{h8}}</td>
+                        <td>{{e8}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c8" [disabled]="c8" (click)="agendar8()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n9}}</th>
+                        <td>{{h9}}</td>
+                        <td>{{e9}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c9" [disabled]="c9" (click)="agendar9()">Agendar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{n10}}</th>
+                        <td>{{h10}}</td>
+                        <td>{{e10}}</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" id="c10" [disabled]="c10" (click)="agendar10()">Agendar</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

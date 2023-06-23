@@ -1,0 +1,16 @@
+.center{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+ }
+ .left{
+    display:flex;
+    align-items: left;
+    justify-content:left;
+ }
+ .titles{
+   margin-top: -35px;
+   margin-bottom: 2px;
+   min-height: 32px;
+   text-align: center;
+}

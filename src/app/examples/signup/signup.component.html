@@ -1,0 +1,74 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/login-image.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register" id="login">
+                        <h3 class="title">Bienvenido</h3>
+                        <form class="register-form">
+                            <label>Cedula</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="nc-icon nc-badge"></i>
+                                </span>
+                              </div>
+                                <input type="text" class="form-control" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" placeholder="Cedula" (focus)="focus=true" [(ngModel)]="cedula2" name="cedula2" (blur)="focus=false" >
+                            </div>
+                            <label>Contraseña</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="nc-icon nc-key-25"></i>
+                                </span>
+                              </div>
+                                <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="clave2" name="clave2" (focus)="focus1=true" (blur)="focus1=false" >
+                            </div>
+                            <div class="center">
+                            <button class="btn btn-primary btn-round" (click)="ingresar()">Ingresar</button>
+                            <button class="btn btn-primary btn-round" (click)="registro()">Registrarse</button>
+                            </div>
+                        </form>
+                        <div class="forgot">
+                            <a (click)="recuperacion()" class="btn btn-link btn-primary">Olvido la contraseña?</a>
+                        </div>
+                    </div>
+                    <div class="card card-register" id="registro">
+                        <button type="button" class="btn btn-primary btn-just-icon" (click)="atras()"><i class="fa fa-reply"></i></button>
+                        <h3 class="titles">Registro</h3>
+                        <form class="register-form">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" [(ngModel)]="cedula" name="cedula" placeholder="Cedula" (change)="validadorDeCedula(cedula)">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" [(ngModel)]="p_nombre" name="p_nombre" placeholder="Nombre" onkeydown="return /[áéíóúÁÉÍÓÚa-zA-Zñ]/i.test(event.key)">
+                            <label>Apellido</label>
+                            <input type="text" class="form-control" [(ngModel)]="p_apellido" name="p_apellido" placeholder="Apellido" onkeydown="return /[áéíóúÁÉÍÓÚa-zA-Zñ]/i.test(event.key)">
+                            <label>Celular</label>
+                            <input type="text" class="form-control" [(ngModel)]="celular" name="celular" placeholder="Celular" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control" [(ngModel)]="clave" name="clave" placeholder="Contraseña">
+                            <button class="btn btn-primary btn-block btn-round" (click)="registro_pacientes()">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="card card-register" id="recuperacion">
+                        <button type="button" class="btn btn-primary btn-just-icon" (click)="atras()"><i class="fa fa-reply"></i></button>
+                        <h3 class="titles">Recuperacion de contraseña</h3>
+                        <form class="register-form">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" [(ngModel)]="cedula" name="cedula" placeholder="Cedula">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" [(ngModel)]="p_nombre" name="p_nombre" placeholder="Nombre" onkeydown="return /[áéíóúÁÉÍÓÚa-zA-Zñ]/i.test(event.key)">
+                            <label>Apellido</label>
+                            <input type="text" class="form-control" [(ngModel)]="p_apellido" name="p_apellido" placeholder="Apellido" onkeydown="return /[áéíóúÁÉÍÓÚa-zA-Zñ]/i.test(event.key)">
+                            <button class="btn btn-primary btn-block btn-round" (click)="recuperar()">Recuperar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer register-footer text-center">
+                <h6>&copy;{{test | date: 'yyyy'}}, Hecho por Fernando Castro</h6>
+            </div>
+        </div>
+    </div>
+</div>
